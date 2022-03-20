@@ -10,8 +10,10 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Receptionist extends javax.swing.JFrame {
-
-    PreparedStatement prp = null;
+    /*
+   Rename Variable prp to preparedStatement
+    */
+    PreparedStatement preparedStatement = null;
     ResultSet result = null;
     Connection connection = null;
     String username;
@@ -123,8 +125,8 @@ public class Receptionist extends javax.swing.JFrame {
         String pass = String.valueOf(rPassField.getPassword());
         try {
             String sql = "select username, password from receptionist where username='" + user + "'";
-            prp = connection.prepareStatement(sql);
-            result = prp.executeQuery();
+            preparedStatement = connection.prepareStatement(sql);
+            result = preparedStatement.executeQuery();
             result.first();
             if (pass.equals(result.getString("password"))) {
                 ReceptionistActivity rActivity = new ReceptionistActivity();

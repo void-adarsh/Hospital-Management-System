@@ -568,29 +568,35 @@ public class addDoctor extends javax.swing.JFrame {
             String user = dUserField.getText();
             String pass = String.valueOf(dPassField.getPassword());
             String sql = "insert into doctor(date,id,name,age,gender,blood,dept,phone,email,status,address,room,username,password) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            try {
-                prp = connection.prepareStatement(sql);
-                prp.setString(1, date);
-                prp.setString(2, id);
-                prp.setString(3, name);
-                prp.setInt(4, age);
-                prp.setString(5, gender);
-                prp.setString(6, blood);
-                prp.setString(7, dept);
-                prp.setString(8, phone);
-                prp.setString(9, email);
-                prp.setString(10, status);
-                prp.setString(11, address);
-                prp.setInt(12, room);
-                prp.setString(13, user);
-                prp.setString(14, pass);
-                prp.execute();
-                JOptionPane.showMessageDialog(null, "Data Saved");
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
+            extracted(date, id, name, age, gender, blood, dept, phone, email, status, address, room, user, pass, sql);
         }
     }//GEN-LAST:event_addDctorbtnMouseClicked
+    /*
+    Extract Method
+     */
+    private void extracted(String date, String id, String name, int age, String gender, String blood, String dept, String phone, String email, String status, String address, int room, String user, String pass, String sql) {
+        try {
+            prp = connection.prepareStatement(sql);
+            prp.setString(1, date);
+            prp.setString(2, id);
+            prp.setString(3, name);
+            prp.setInt(4, age);
+            prp.setString(5, gender);
+            prp.setString(6, blood);
+            prp.setString(7, dept);
+            prp.setString(8, phone);
+            prp.setString(9, email);
+            prp.setString(10, status);
+            prp.setString(11, address);
+            prp.setInt(12, room);
+            prp.setString(13, user);
+            prp.setString(14, pass);
+            prp.execute();
+            JOptionPane.showMessageDialog(null, "Data Saved");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
 
     private void clearPbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearPbtnMouseClicked
         dDateField.setText("");

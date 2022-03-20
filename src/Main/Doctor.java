@@ -10,8 +10,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class Doctor extends javax.swing.JFrame {
-
-    PreparedStatement prp = null;
+    /*
+       Rename Variable prp to preparedStatement
+        */
+    PreparedStatement preparedStatement = null;
     ResultSet result = null;
     Connection connection = null;
     String userName;
@@ -149,8 +151,8 @@ public class Doctor extends javax.swing.JFrame {
 
         try {
             String sql = "select username, password from doctor where username='" + user + "'";
-            prp = connection.prepareStatement(sql);
-            result = prp.executeQuery();
+            preparedStatement = connection.prepareStatement(sql);
+            result = preparedStatement.executeQuery();
             result.first();
             userName = user;
             if (pass.equals(result.getString("password"))) {

@@ -15,7 +15,10 @@ import javax.swing.JOptionPane;
  */
 public class Admin extends javax.swing.JFrame {
 
-    PreparedStatement prp = null;
+    /*
+    Rename Variable
+     */
+    PreparedStatement preparedStatement = null;
     ResultSet result = null;
     Connection connection = null;
     String username;
@@ -143,8 +146,8 @@ public class Admin extends javax.swing.JFrame {
 
         try {
             String sql = "select username, password from admin where username='" + user + "'";
-            prp = connection.prepareStatement(sql);
-            result = prp.executeQuery();
+            preparedStatement = connection.prepareStatement(sql);
+            result = preparedStatement.executeQuery();
             result.first();
             if (pass.equals(result.getString("password"))) {
                 AdminActivity adminActivity = new AdminActivity();

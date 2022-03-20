@@ -28,6 +28,13 @@ public class Appointment extends javax.swing.JFrame {
 
         connection = Connector.ConnectDb();
         String sql = "SELECT id,age,gender FROM patient WHERE name = '" + pName + "'";
+        Connection(sql);
+
+    }
+    /*
+    Extract Method
+     */
+    private void Connection(String sql) {
         try {
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -44,7 +51,6 @@ public class Appointment extends javax.swing.JFrame {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Something Went Wrong");
         }
-
     }
 
     public Appointment() {

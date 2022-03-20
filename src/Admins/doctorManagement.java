@@ -424,7 +424,11 @@ public class doctorManagement extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    private void addReceptionMouseClicked(java.awt.event.MouseEvent evt){
+        addDoctor aDoctor = new addDoctor();
+        aDoctor.setVisible(true);
+        dispose();
+    }
     private void jPanel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseMoved
         adminName.setText(username);
     }//GEN-LAST:event_jPanel1MouseMoved
@@ -436,21 +440,24 @@ public class doctorManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel17MouseClicked
 
     private void addReceptionbtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addReceptionbtn1MouseClicked
-        addDoctor aDoctor = new addDoctor();
-        aDoctor.setVisible(true);
-        dispose();
+//        addDoctor aDoctor = new addDoctor();
+//        aDoctor.setVisible(true);
+//        dispose();
+      addReceptionMouseClicked(evt);
     }//GEN-LAST:event_addReceptionbtn1MouseClicked
 
     private void addReceptionbtn3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addReceptionbtn3MouseClicked
-        addDoctor aDoctor = new addDoctor();
-        aDoctor.setVisible(true);
-        dispose();
+//        addDoctor aDoctor = new addDoctor();
+//        aDoctor.setVisible(true);
+//        dispose();
+        addReceptionMouseClicked(evt);
     }//GEN-LAST:event_addReceptionbtn3MouseClicked
 
     private void updateReceptionbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateReceptionbtnMouseClicked
-        updateDoctor uReceptionist = new updateDoctor();
-        uReceptionist.setVisible(true);
-        this.dispose();
+//        updateDoctor uReceptionist = new updateDoctor();
+//        uReceptionist.setVisible(true);
+//        this.dispose();
+        updateReceptionbtn2MouseClicked(evt);
     }//GEN-LAST:event_updateReceptionbtnMouseClicked
 
     private void updateReceptionbtn2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateReceptionbtn2MouseClicked
